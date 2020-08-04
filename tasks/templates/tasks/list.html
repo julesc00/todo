@@ -1,29 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h2>Tasks</h2>
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container">
 
     <div>
-        <form action="/" method="POST">
-            {% csrf_token %}
-            {{ form.title }}
-            <input type="submit" name="Create Task" value="Envoyer">
-        </form>
+        <h2 class="main-title">Tasks</h2>
+    </div>
+
+        <div>
+            <div class="row">
+                <div class="col-md form-group">
+                    <div class="task-card card card-body w-100" style="width: 100%">
+                        <form action="/" method="POST">
+                            {% csrf_token %}
+                            {{ form.title }}
+                            <input class="btn btn-info btn-sm" type="submit" name="Create Task" value="Envoyer">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                {% for task in tasks %}
+
+                    <div class="task-card card card-body d-flex w-100">
+                        {% if task.completed == True %}
+                            <strike>{{ task }}</strike>
+                            {% else %}
+                            <span>{{ task }}</span>
+                            {% endif %}
+
+                            <a href="{% url 'update_task' task.id %}"
+                           class="btn btn-outline-info btn-sm btn-block">Update</a>
+                            <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-danger btn-sm btn-block">Effacer</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
 
-        {% for task in tasks %}
-            <div>
-                <a href="{% url 'update_task' task.id %}">Update</a>
-            <p>{{ task }}</p>
-            <h5>{{ task.created_date }}</h5>
-            </div>
-        {% endfor %}
 
-
-</body>
-</html>
+{% endblock %}

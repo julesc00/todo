@@ -5,6 +5,7 @@ from .forms import *
 
 
 def show_tasks(request):
+    """Show a list of tasks."""
     tasks = Task.objects.all()
     form = TaskForm()
 
@@ -20,6 +21,7 @@ def show_tasks(request):
 
 
 def update_task(request, pk):
+    """Update a specific task by id"""
     task = Task.objects.get(id=pk)
 
     form = TaskForm(instance=task)
@@ -28,11 +30,20 @@ def update_task(request, pk):
         if form.is_valid():
             form.save()
         return redirect("/")
+
     context = {"form": form}
+    return render(request, "tasks/update_task.html", context)
 
-    return render(request, "tasks/updated_task.html", context)
 
+def delete_task(request, pk):
+    """Delete a task"""
+    task = Task.objects.get(id=pk)
 
-def delete_task(request):
-    pass
+    if request.method == "POST":
+        task.delete()
+        return redirect("/")
+
+    context = {"task": task}
+
+    return render(request, "tasks/delete_task.html", context)
 
