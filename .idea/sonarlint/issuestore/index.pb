@@ -15,8 +15,6 @@ O
 tasks/templates/tasks/base.html,7/2/72c6085564e5cc4f2068f360b74e5bb622da9fdb
 =
 tasks/urls.py,a/9/a91b35e5fe9f210b8884d97e95d25313e212395d
-W
-'tasks/templates/tasks/updated_task.html,6/9/69758552ef8d57eea77f32b731e0cd717dfa6626
 O
 tasks/templates/tasks/list.html,9/6/9668da5c14b8c5bc116629678359e288e4ca5354
 >
@@ -26,3 +24,9 @@ O
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+V
+&tasks/templates/tasks/update_task.html,0/0/00244bc3720ee8b03325fc39ffaeafb311b1fc62
+C
+static/css/main.css,1/d/1d911fa3e8e9e880e642b3cfb08a49276784f29a
+V
+&tasks/templates/tasks/delete_task.html,1/d/1d89c662356f45c9a691a248122426599c113a82

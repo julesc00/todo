@@ -7,7 +7,7 @@
     <div class="container">
 
     <div>
-        <h2 class="main-title">Tasks</h2>
+        <h2 class="main-title">Devours</h2>
     </div>
 
         <div>
@@ -38,12 +38,27 @@
                             {% endif %}
 
                             <a href="{% url 'update_task' task.id %}"
-                           class="btn btn-outline-info btn-sm btn-block">Update</a>
+                           class="btn btn-outline-info btn-sm btn-block">Mettre à jour</a>
                             <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-danger btn-sm btn-block">Effacer</a>
                     </div>
                 {% endfor %}
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="card card-body">
+
+                </div>
+            </div>
+            <div class="col-4 d-flex">
+                <div class="card card-body flex-fill">
+                    <a href="" class="btn btn-outline-info btn-sm btn-block">Mettre à jour</a>
+                    <a href="" class="btn btn-outline-danger btn-sm btn-block">Effacer</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 

@@ -2,17 +2,20 @@
 {% load static %}
 {% block content %}
 
-    <div class="row">
-        <div class="col">
-            <div class="update-card card card-body d-inline-flex">
-                <h3>Update task</h3>
-                <form action="" method="POST">
+<div class="container">
+        <div class="row">
+        <div class="col-md col-update">
+            <div class="task-card-update w-100 update-card card card-body d-inline-flex">
+                <div>
+                    <form action="" method="POST">
                     {% csrf_token %}
                     {{ form }}
-                    <input type="submit" name="Update Task">
+                    <input class="btn btn-info btn-sm" type="submit" value="Mettre à jour">
                 </form>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

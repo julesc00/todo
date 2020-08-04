@@ -8,6 +8,14 @@ body {
     background-color: #f1faee;
     margin: 10px auto;
 }
+.col-update {
+    display: inline-block;
+}
+.task-card-update {
+    background-color: #f1faee;
+    margin: 10px auto;
+
+}
 input {
     width: 100%;
     padding: 12px 20px;

@@ -2,18 +2,23 @@
 {% load static %}
 {% block content %}
     <br>
+<div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="class card-body">
-                <p>Voulez-vour vraiment effacer cet devoir"{{ task }}"?</p>
+        <div class="col-8 col-update">
+            <div class="task-card-update w-100 update-card card-body rounded">
+                <p class="card-text">Voulez-vous vraiment effacer cet devoir "<span class="">{{ task }}</span>"?</p>
 
                 <form action="" method="POST">
                     {% csrf_token %}
-                    <a href="{% url 'show_tasks' %}" class="btn btn-warning btn-sm">Canceler</a>
+                    <a href="{% url 'show_tasks' %}" class="btn btn-warning btn-sm w-100">Annuler</a>
                     <input type="submit" name="Confirm" value="Effacer" class="btn btn-danger btn-sm">
                 </form>
             </div>
         </div>
+
+
     </div>
+</div>
+
 
 {% endblock %}
